@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
   <meta charset="UTF-8">
   <title>Ionic App</title>
@@ -10,7 +11,7 @@
   <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#4e8ef7">
- 
+
   <!-- cordova.js required for cordova apps -->
   <script src="cordova.js"></script>
 
@@ -24,8 +25,138 @@
   </script>-->
 
   <link href="build/main.css" rel="stylesheet">
+  <style>
+    * {
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    }
+    
+    body {
+      -webkit-touch-callout: none;
+      /* prevent callout to copy image, etc when tap to hold */
+      -webkit-text-size-adjust: none;
+      /* prevent webkit from resizing text to fit */
+      -webkit-user-select: none;
+      /* prevent copy paste, to allow, change 'none' to 'text' */
+      background-color: #E4E4E4;
+      font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+    
+    #header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #DDDDDD;
+      border-bottom: 1px solid #BBBBBB;
+      height: 60px;
+      z-index: 2;
+    }
+    
+    #header #title {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+    
+    #header #toggleChat {
+      position: absolute;
+      top: 26px;
+      background-color: #eee;
+      right: 0;
+      font-size: 12px;
+      text-decoration: underline;
+      padding: 2px;
+      border-radius: 2px;
+    }
+    
+    #header #focusMessenger {
+      position: absolute;
+      top: 26px;
+      background-color: #eee;
+      right: 44px;
+      font-size: 12px;
+      text-decoration: underline;
+      padding: 2px;
+      border-radius: 2px;
+    }
+    
+    #header #updateMessenger {
+      position: absolute;
+      top: 26px;
+      background-color: #eee;
+      right: 86px;
+      font-size: 12px;
+      text-decoration: underline;
+      padding: 2px;
+      border-radius: 2px;
+    }
+    
+    #messages {
+      width: 96%;
+      left: 2%;
+      position: absolute;
+      top: 60px;
+      bottom: 0;
+      overflow-y: scroll;
+    }
+    
+    .message {
+      width: 100%;
+      padding: 4px 0;
+    }
+    
+    .right {
+      text-align: right;
+    }
+    
+    .message span {
+      width: 65%;
+      padding: 14px 10px;
+      border-radius: 5px;
+      display: inline-block;
+      /*margin: 0 20px;*/
+      text-align: left;
+    }
+    
+    .message div {
+      padding: 6px 10px;
+      display: inline-block;
+      margin: 0 20px 8px 20px;
+      color: #BBBBBB;
+      font-size: 12px;
+    }
+    
+    .message.left span {
+      background-color: #CCCCCC;
+    }
+    
+    .message.right span {
+      color: #FFFFFF;
+      background-color: #007AFF;
+    }
+  </style>
+  <!--<script>
+    window.onerror = function (a, b, c) {
+      alert(a);
+      alert(c);
+    }
+    function appendMessage(message) {
+      message = message.split("\n").join("<br/>");
+      var messages = document.getElementById("messages");
+      messages.innerHTML = messages.innerHTML + '<div class="message right"><span>' + message + '</span><div>10/20/16, 5:21 PM</div></div>';
+      // scroll down the page so the message is shown
+      messages.scrollTop = messages.scrollHeight;
+    }
+  </script>-->
 
 </head>
+
 <body>
 
   <!-- Ionic's root component and where the app will load -->
@@ -37,5 +168,14 @@
   <!-- The bundle js is generated during the build process -->
   <script src="build/main.js"></script>
 
+
+<script>
+ 
+  //setTimeout(function() {
+  //    NativeKeyboard.hideMessengerKeyboard();
+  //}, 5000);
+</script>
+
 </body>
+
 </html>

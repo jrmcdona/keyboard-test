@@ -1,17 +1,140 @@
-<ion-header>
+<style>
+    * {
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    }
+    /*body {
+      -webkit-touch-callout: none; 
+      -webkit-text-size-adjust: none; 
+      -webkit-user-select: none; 
+      background-color: #E4E4E4;
+      font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }*/
+    #header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #DDDDDD;
+      border-bottom: 1px solid #BBBBBB;
+      height: 60px;
+      z-index: 2;
+    }
+    #header #title {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+    #header #toggleChat {
+      position: absolute;
+      top: 26px;
+      background-color: #eee;
+      right: 0;
+      font-size: 12px;
+      text-decoration: underline;
+      padding: 2px;
+      border-radius: 2px;
+    }
+    #header #focusMessenger {
+      position: absolute;
+      top: 26px;
+      background-color: #eee;
+      right: 44px;
+      font-size: 12px;
+      text-decoration: underline;
+      padding: 2px;
+      border-radius: 2px;
+    }
+    #header #updateMessenger {
+      position: absolute;
+      top: 26px;
+      background-color: #eee;
+      right: 86px;
+      font-size: 12px;
+      text-decoration: underline;
+      padding: 2px;
+      border-radius: 2px;
+    }
+    #messages {
+      width: 96%;
+      left: 2%;
+      position: absolute;
+      top: 60px;
+      bottom: 0;
+      overflow-y: scroll;
+    }
+    .message {
+      width: 100%;
+      padding: 4px 0;
+    }
+    .right {
+      text-align: right;
+    }
+    .message span {
+      width: 65%;
+      padding: 14px 10px;
+      border-radius: 5px;
+      display: inline-block;
+      /*margin: 0 20px;*/
+      text-align: left;
+    }
+    .message div {
+      padding: 6px 10px;
+      display: inline-block;
+      margin: 0 20px 8px 20px;
+      color: #BBBBBB;
+      font-size: 12px;
+    }
+    .message.left span {
+      background-color: #CCCCCC;
+    }
+    .message.right span {
+      color: #FFFFFF;
+      background-color: #007AFF;
+    }
+  </style>
+
+<!--<ion-header>
   <ion-navbar>
     <ion-title>Home</ion-title>
   </ion-navbar>
 </ion-header>
-
+-->
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<div id="header">
+  <div id="title">Chatting with John</div>
+  <div id="toggleChat" (click)="toggleChat()">Toggle</div>
+  <div id="focusMessenger" (click)="showMessengerKeyboard()">Focus</div>
+  <div id="updateMessenger" (click)="updateMessenger()">Update</div>
+</div>
+
+<div id="messages" class="message-list">
+  <div class="message left"><span>Long time no chat!</span>
+    <div>10/19/16, 2:18 AM</div>
+  </div>
+  <div class="message right"><span>Yeah likewise ;)</span>
+    <div>10/20/16, 4:15 PM</div>
+  </div>
+  <div class="message left"><span>Hey man, how are you?</span>
+    <div>10/20/16, 4:18 PM</div>
+  </div>
+  <div class="message right"><span>Good, thanks, how are you?</span>
+    <div>10/20/16, 4:20 PM</div>
+  </div>
+  <div class="message left"><span>Meh.. could be better. I'm out of beer 🍺. Do you have any left?</span></div>
+  <div class="message left"><span>.. please!</span>
+    <div>10/20/16, 4:21 PM</div>
+  </div>
+  <div class="message right"><span>Lemme check..</span></div>
+  <div class="message right"><span>Dude! I have 2 sixpacks stacked in the fridge - come over! 🍻</span>
+    <div>10/20/16, 4:23 PM</div>
+  </div>
+  <div class="message left"><span>Right on! Let's party 🎉 🎉</span>
+    <div>10/20/16, 4:23 PM</div>
+  </div>
+</div>
 </ion-content>
